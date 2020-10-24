@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DBAurorita_Access"
+  DTS:DTSID="{28C27CD1-FEA8-49CC-BD8C-133F17F2730A}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=vps-1827216-x.dattaweb.com;User ID=SSD;Initial Catalog=Aurorita_Access;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbFE4hc9JCUCUhYejWQd8aQAAAAACAAAAAAAQZgAAAAEAACAAAAA1vPXPj3gl7a91rR+JkQcsi6brHvmRiKheo/diLXzZ3wAAAAAOgAAAAAIAACAAAACGdcsI7pXT/jTeF9PkQVvacO58N15GQRBuHaYvEXX+7IAAAAAOa5nVNWbrBDo6w5VDQkbjADUlE+l1qw0RFr9/wgQyamiodVf7MEO/D1eTC5cg/2cAXZCafqXh3OslpA5BhCBM39aMDmIXOsk4OkOLVQo4bUrM2owxbqv/5PM5Z1O9OUXv69xLdhdvSww4Uv0EuKkhN2uCabnzYBeUP0E8/Sr3/0AAAAAIHm2QLMUrnO6ZkVmHsJ7TLG+pp4d61pmkoNQORHEOJSJa81jxv5AY3FLHDzwFzCPgjakw1cupijC21utkqPtL</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

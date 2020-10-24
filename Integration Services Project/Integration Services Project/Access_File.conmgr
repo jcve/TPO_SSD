@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Access_File"
+  DTS:DTSID="{C9FBF59A-4B57-4032-A486-ACD9F7D77B0A}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=C:\SSD_TPO\Neptuno_v2020.mdb;Provider=Microsoft.ACE.OLEDB.16.0;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
