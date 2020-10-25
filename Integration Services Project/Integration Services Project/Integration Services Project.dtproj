@@ -26,12 +26,12 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">PC_DEVICE</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbFE4hc9JCUCUhYejWQd8aQAAAAACAAAAAAAQZgAAAAEAACAAAAAwxqYTYzBfk1J0xtcdKV4lGZ1hLYlPOus96FwiAS9IRAAAAAAOgAAAAAIAACAAAADYMwcLO0HqNU8So2edhCcXR/9aaL8yiMkXpyuTiGa8YJAAAABElN1hzqpeJi4gOVdrNubGnKmWYRGbnwLyC4WfBX/TRFqg+YTdb2qIIR7iUQG5zsh74jjzy989Cj1sz9s/pYZZumcQig09SFSfqznjRbtm22f9R60FrcXhEN8JQubgPpMUkRLsQVwg0AYP3vpT0TMMvbXKH7lTLf6OXaDRNy0qo/NFHaIEbXPSnlB+vx2verpAAAAApCsrgDfbcfB2eF590Uj+jNWWTXzZW33JC5k2jSZs3ZItXZNe1fqbPI0QXIPuSXIUoTZBS9pamtwsfzgQKMRu8Q==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbFE4hc9JCUCUhYejWQd8aQAAAAACAAAAAAAQZgAAAAEAACAAAADZsU4nYIw5kkf9nDH1JQbWY1U0UyGxgtl1b40ThfGOjAAAAAAOgAAAAAIAACAAAADEdf0v0drtyOV+Arlo/aMVzTE4yvFazImGgdj+oex+9pAAAACfOWuoUGJ2MavPBFMERx8uyyCc7TrHgOI7JGUszvGK1bjHrAa18/BwHHNnOsB9DcKNWka/CId25o3Zj/D/dUaRb/zxTsERpaDg+rQp5QRBWo1nzYG6T+flpepBtlwqDNNNn7vvWme0zYIV5eKZO7548lt5zwr/SgjlaQ721Um4D4LM/tCU1Jrti+VdB/t8hPFAAAAAr5bZM4rQs4QR4RhZfNEvW6Y/jLf5oo2mtCw8LexpTfcGH15bjVauOj8mbNCRUGYk0TRAKbaYUMwEkzyqnDj2DQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="AccessToDB.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Package1.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ExcelToDB.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="DBAurorita_Access.conmgr" />
@@ -414,7 +414,7 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Package1.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="ExcelToDB.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{CF90022C-153F-43D4-B0C1-82D146162D40}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>

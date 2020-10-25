@@ -1,19 +1,1384 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="10/24/2020 8:28:58 PM"
+  DTS:CreationDate="10/25/2020 12:40:51 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="PC_DEVICE"
   DTS:CreatorName="PC_DEVICE\JuanCruz"
-  DTS:DTSID="{BF7D1127-8085-4505-A282-1D14EAF060A6}"
+  DTS:DTSID="{CF90022C-153F-43D4-B0C1-82D146162D40}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.132"
   DTS:LocaleID="11274"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionGUID="{EAC57A72-56DB-4D07-BBE6-93F5C6EF1AC7}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{B6D9579D-6362-4752-AB7B-0AB7AD71E697}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{2AF5BF2B-FE8B-4CD2-A3DB-2796932B7C93}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\SSD_TPO\PresupuestodeVentas_v2020.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
-  <DTS:Executables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Limpieza"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B617664C-A0A4-4670-97EB-B2324DC7BB29}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpieza"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{083130AD-B8A9-49DB-B532-037D64736242}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE Presupuesto;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Presupuesto"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8B2684A1-C228-458F-9F57-FF2C03CF7833}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Presupuesto"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Presupuesto\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Presupuesto\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Presupuesto\Data Conversion.Inputs[Data Conversion Input].Columns[PaísDestinatario]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PaísDestinatario"
+                      lineageId="Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[PaísDestinatario]" />
+                    <inputColumn
+                      refId="Package\Presupuesto\Data Conversion.Inputs[Data Conversion Input].Columns[NombreCategoría]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NombreCategoría"
+                      lineageId="Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[NombreCategoría]" />
+                    <inputColumn
+                      refId="Package\Presupuesto\Data Conversion.Inputs[Data Conversion Input].Columns[Valor]"
+                      cachedDataType="r8"
+                      cachedName="Valor"
+                      lineageId="Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[Valor]" />
+                    <inputColumn
+                      refId="Package\Presupuesto\Data Conversion.Inputs[Data Conversion Input].Columns[Periodo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Periodo"
+                      lineageId="Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[Periodo]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Presupuesto\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PaísDestinatario]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PaísDestinatario]"
+                      name="Copy of PaísDestinatario"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[PaísDestinatario]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NombreCategoría]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NombreCategoría]"
+                      name="Copy of NombreCategoría"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[NombreCategoría]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Valor]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Valor]"
+                      name="Copy of Valor"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[Valor]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="7"
+                      lineageId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]"
+                      name="Copy of Periodo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[Periodo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Presupuesto\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Presupuesto\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'PPTO 2016$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Presupuesto\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[PaísDestinatario]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[PaísDestinatario]"
+                      length="255"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[PaísDestinatario]"
+                      name="PaísDestinatario"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[NombreCategoría]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[NombreCategoría]"
+                      length="255"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[NombreCategoría]"
+                      name="NombreCategoría"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[ene#-16]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[ene#-16]"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[ene#-16]"
+                      name="ene#-16"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[feb#-16]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[feb#-16]"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[feb#-16]"
+                      name="feb#-16"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[mar#-16]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[mar#-16]"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[mar#-16]"
+                      name="mar#-16"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[abr#-16]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[abr#-16]"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[abr#-16]"
+                      name="abr#-16"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[may#-16]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[may#-16]"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[may#-16]"
+                      name="may#-16"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[jun#-16]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[jun#-16]"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[jun#-16]"
+                      name="jun#-16"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[jul#-16]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[jul#-16]"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[jul#-16]"
+                      name="jul#-16"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[ago#-16]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[ago#-16]"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[ago#-16]"
+                      name="ago#-16"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[sep#-16]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[sep#-16]"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[sep#-16]"
+                      name="sep#-16"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[oct#-16]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[oct#-16]"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[oct#-16]"
+                      name="oct#-16"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[nov#-16]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[nov#-16]"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[nov#-16]"
+                      name="nov#-16"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[dic#-16]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[dic#-16]"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[dic#-16]"
+                      name="dic#-16"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[PaísDestinatario]"
+                      dataType="wstr"
+                      length="255"
+                      name="PaísDestinatario" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[NombreCategoría]"
+                      dataType="wstr"
+                      length="255"
+                      name="NombreCategoría" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[ene#-16]"
+                      dataType="r8"
+                      name="ene#-16" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[feb#-16]"
+                      dataType="r8"
+                      name="feb#-16" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[mar#-16]"
+                      dataType="r8"
+                      name="mar#-16" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[abr#-16]"
+                      dataType="r8"
+                      name="abr#-16" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[may#-16]"
+                      dataType="r8"
+                      name="may#-16" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[jun#-16]"
+                      dataType="r8"
+                      name="jun#-16" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[jul#-16]"
+                      dataType="r8"
+                      name="jul#-16" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[ago#-16]"
+                      dataType="r8"
+                      name="ago#-16" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[sep#-16]"
+                      dataType="r8"
+                      name="sep#-16" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[oct#-16]"
+                      dataType="r8"
+                      name="oct#-16" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[nov#-16]"
+                      dataType="r8"
+                      name="nov#-16" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].ExternalColumns[dic#-16]"
+                      dataType="r8"
+                      name="dic#-16" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[PaísDestinatario]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[PaísDestinatario]"
+                      name="PaísDestinatario" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[NombreCategoría]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[NombreCategoría]"
+                      name="NombreCategoría" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[ene#-16]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[ene#-16]"
+                      name="ene#-16" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[feb#-16]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[feb#-16]"
+                      name="feb#-16" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[mar#-16]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[mar#-16]"
+                      name="mar#-16" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[abr#-16]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[abr#-16]"
+                      name="abr#-16" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[may#-16]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[may#-16]"
+                      name="may#-16" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[jun#-16]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[jun#-16]"
+                      name="jun#-16" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[jul#-16]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[jul#-16]"
+                      name="jul#-16" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[ago#-16]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[ago#-16]"
+                      name="ago#-16" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[sep#-16]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[sep#-16]"
+                      name="sep#-16" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[oct#-16]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[oct#-16]"
+                      name="oct#-16" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[nov#-16]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[nov#-16]"
+                      name="nov#-16" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[dic#-16]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[dic#-16]"
+                      name="dic#-16" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Presupuesto\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Presupuesto]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Presupuesto\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{083130AD-B8A9-49DB-B532-037D64736242}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita_Excel]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Presupuesto\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Presupuesto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of PaísDestinatario]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of PaísDestinatario"
+                      externalMetadataColumnId="Package\Presupuesto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PaisDestinatario]"
+                      lineageId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PaísDestinatario]" />
+                    <inputColumn
+                      refId="Package\Presupuesto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of NombreCategoría]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of NombreCategoría"
+                      externalMetadataColumnId="Package\Presupuesto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreCategoria]"
+                      lineageId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NombreCategoría]" />
+                    <inputColumn
+                      refId="Package\Presupuesto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Valor]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Valor"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Presupuesto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor]"
+                      lineageId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Valor]" />
+                    <inputColumn
+                      refId="Package\Presupuesto\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Periodo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="7"
+                      cachedName="Copy of Periodo"
+                      externalMetadataColumnId="Package\Presupuesto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Periodo]"
+                      lineageId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PaisDestinatario]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PaisDestinatario" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreCategoria]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NombreCategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor]"
+                      dataType="i4"
+                      name="Valor" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Periodo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="Periodo" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Presupuesto\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Presupuesto\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Presupuesto\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Presupuesto\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Presupuesto\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Presupuesto\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Presupuesto\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Presupuesto\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Presupuesto\Union All.Inputs[Union All Input 1].Columns[Periodo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Periodo"
+                      lineageId="Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Periodo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[Periodo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto\Union All.Inputs[Union All Input 1].Columns[Valor]"
+                      cachedDataType="r8"
+                      cachedName="Valor"
+                      lineageId="Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Valor]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[Valor]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto\Union All.Inputs[Union All Input 1].Columns[PaísDestinatario]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PaísDestinatario"
+                      lineageId="Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[PaísDestinatario]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[PaísDestinatario]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto\Union All.Inputs[Union All Input 1].Columns[NombreCategoría]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NombreCategoría"
+                      lineageId="Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[NombreCategoría]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[NombreCategoría]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Presupuesto\Union All.Inputs[Union All Input 2]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Presupuesto\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[Periodo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[Periodo]"
+                      name="Periodo" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[Valor]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[Valor]"
+                      name="Valor" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[PaísDestinatario]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[PaísDestinatario]"
+                      name="PaísDestinatario" />
+                    <outputColumn
+                      refId="Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[NombreCategoría]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Presupuesto\Union All.Outputs[Union All Output 1].Columns[NombreCategoría]"
+                      name="NombreCategoría" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Presupuesto\Unpivot"
+              componentClassID="Microsoft.UnPivot"
+              contactInfo="Unpivot;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Expands an un-normalized data flow into a more normalized version. Values from multiple columns of a single record expand to multiple records in a single column. For example, expand a table that lists athletic scores with a column for each game to more records and a single score column."
+              name="Unpivot">
+              <inputs>
+                <input
+                  refId="Package\Presupuesto\Unpivot.Inputs[Unpivot Input]"
+                  hasSideEffects="true"
+                  name="Unpivot Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Presupuesto\Unpivot.Inputs[Unpivot Input].Columns[ene#-16]"
+                      cachedDataType="r8"
+                      cachedName="ene#-16"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[ene#-16]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2016/01</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto\Unpivot.Inputs[Unpivot Input].Columns[feb#-16]"
+                      cachedDataType="r8"
+                      cachedName="feb#-16"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[feb#-16]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2016/02</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto\Unpivot.Inputs[Unpivot Input].Columns[mar#-16]"
+                      cachedDataType="r8"
+                      cachedName="mar#-16"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[mar#-16]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2016/03</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto\Unpivot.Inputs[Unpivot Input].Columns[abr#-16]"
+                      cachedDataType="r8"
+                      cachedName="abr#-16"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[abr#-16]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2016/04</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto\Unpivot.Inputs[Unpivot Input].Columns[may#-16]"
+                      cachedDataType="r8"
+                      cachedName="may#-16"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[may#-16]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2016/05</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto\Unpivot.Inputs[Unpivot Input].Columns[jun#-16]"
+                      cachedDataType="r8"
+                      cachedName="jun#-16"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[jun#-16]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2016/06</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto\Unpivot.Inputs[Unpivot Input].Columns[jul#-16]"
+                      cachedDataType="r8"
+                      cachedName="jul#-16"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[jul#-16]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2016/07</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto\Unpivot.Inputs[Unpivot Input].Columns[ago#-16]"
+                      cachedDataType="r8"
+                      cachedName="ago#-16"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[ago#-16]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2016/08</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto\Unpivot.Inputs[Unpivot Input].Columns[sep#-16]"
+                      cachedDataType="r8"
+                      cachedName="sep#-16"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[sep#-16]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2016/09</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto\Unpivot.Inputs[Unpivot Input].Columns[oct#-16]"
+                      cachedDataType="r8"
+                      cachedName="oct#-16"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[oct#-16]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2016/10</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto\Unpivot.Inputs[Unpivot Input].Columns[nov#-16]"
+                      cachedDataType="r8"
+                      cachedName="nov#-16"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[nov#-16]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2016/11</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto\Unpivot.Inputs[Unpivot Input].Columns[dic#-16]"
+                      cachedDataType="r8"
+                      cachedName="dic#-16"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[dic#-16]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2016/12</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto\Unpivot.Inputs[Unpivot Input].Columns[PaísDestinatario]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PaísDestinatario"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[PaísDestinatario]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[PaísDestinatario]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto\Unpivot.Inputs[Unpivot Input].Columns[NombreCategoría]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NombreCategoría"
+                      lineageId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output].Columns[NombreCategoría]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[NombreCategoría]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Presupuesto\Unpivot.Outputs[Unpivot Output]"
+                  name="Unpivot Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Periodo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Periodo]"
+                      name="Periodo">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">true</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Valor]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[Valor]"
+                      name="Valor">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[PaísDestinatario]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[PaísDestinatario]"
+                      name="PaísDestinatario">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[NombreCategoría]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Presupuesto\Unpivot.Outputs[Unpivot Output].Columns[NombreCategoría]"
+                      name="NombreCategoría">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Presupuesto.Paths[Data Conversion Output]"
+              endId="Package\Presupuesto\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Presupuesto\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Presupuesto.Paths[Excel Source Output]"
+              endId="Package\Presupuesto\Unpivot.Inputs[Unpivot Input]"
+              name="Excel Source Output"
+              startId="Package\Presupuesto\Excel Source.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Presupuesto.Paths[Union All Output 1]"
+              endId="Package\Presupuesto\Data Conversion.Inputs[Data Conversion Input]"
+              name="Union All Output 1"
+              startId="Package\Presupuesto\Union All.Outputs[Union All Output 1]" />
+            <path
+              refId="Package\Presupuesto.Paths[Unpivot Output]"
+              endId="Package\Presupuesto\Union All.Inputs[Union All Input 1]"
+              name="Unpivot Output"
+              startId="Package\Presupuesto\Unpivot.Outputs[Unpivot Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{653BF35B-919D-4DC7-8DE0-46F95FEDAAF3}"
+      DTS:From="Package\Limpieza"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Presupuesto" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Limpieza"
+          TopLeft="464.5,79.5" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Presupuesto"
+          TopLeft="458.5,196.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="527.5,121.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,75"
+              Start="0,0"
+              End="0,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Presupuesto">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Presupuesto\Excel Source"
+          TopLeft="449.5,45.5" />
+        <NodeLayout
+          Size="116,42"
+          Id="Package\Presupuesto\Unpivot"
+          TopLeft="465.5,150.5" />
+        <EdgeLayout
+          Id="Package\Presupuesto.Paths[Excel Source Output]"
+          TopLeft="522.5,87.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Presupuesto\Union All"
+          TopLeft="459.5,242.5" />
+        <EdgeLayout
+          Id="Package\Presupuesto.Paths[Unpivot Output]"
+          TopLeft="522.25,192.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Presupuesto\Data Conversion"
+          TopLeft="437.5,325.5" />
+        <EdgeLayout
+          Id="Package\Presupuesto.Paths[Union All Output 1]"
+          TopLeft="519.5,284.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Presupuesto\OLE DB Destination"
+          TopLeft="435.5,428.5" />
+        <EdgeLayout
+          Id="Package\Presupuesto.Paths[Data Conversion Output]"
+          TopLeft="521,367.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Presupuesto\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Presupuesto\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
