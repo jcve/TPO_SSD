@@ -5,10 +5,10 @@
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=vps-1827216-x.dattaweb.com;User ID=SSD;Initial Catalog=Aurorita_Excel;Provider=MSOLEDBSQL.1;Application Name=SSIS-Package1-{083130AD-B8A9-49DB-B532-037D64736242}vps-1827216-x.dattaweb.com.Aurorita_Excel.SSD;Auto Translate=False;">
+      DTS:ConnectionString="Data Source=vps-1827216-x.dattaweb.com;User ID=SSD;Initial Catalog=Aurorita_Excel;Provider=MSOLEDBSQL.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{083130AD-B8A9-49DB-B532-037D64736242}vps-1827216-x.dattaweb.com.Aurorita_Excel.SSD;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbFE4hc9JCUCUhYejWQd8aQAAAAACAAAAAAAQZgAAAAEAACAAAAA5sBUc7MAGJEx0R2VOtzQAHTcC+HI3kfEeJt0VneNdFAAAAAAOgAAAAAIAACAAAAC0xmkpmklBCdmgwOiQRZEtwS9mXwesagBq/XIXyFmS0oAAAAAbROv/Bsx4SSssK9E+OnLT8nyFfznnIgAROAc1hPLVla6xWsHVyDvg7BDpJcNc1tp5qkaK4PUPRy7b8IdX9BK5/QDYzi1P1G11p/KaHEAuGhu2D/kR6ATRzoGT5tcEfH+G21XBkHRMQbB0BM6iMZAecFplE/c5heDnIDlvJc5/4UAAAADeXeP8692ZtUwz5/rafmdvSKoB/QXPCqwYNCEbpZP6rtJyOMCiNF2SaJhKdCPdaProPtB3VEARdMWZRk9a8Qh7</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbFE4hc9JCUCUhYejWQd8aQAAAAACAAAAAAAQZgAAAAEAACAAAADzOqZHRbN/dvUJvaYT1UANXWDNYTEsFiNEpWeOTBLddAAAAAAOgAAAAAIAACAAAABLvVxm+r0u0AawgHe1qh4F21zPWrGbaJA4NzdBrVCpGYAAAACd7/T9Omy67r2NW7VW83B2PF8/1t6MW2pTff9vIKJ378F0U7aYOqzLqL96jjBBGiO5bpB52LoD2hw5cOPRPi327KTL1Fxa4DNtZVPVck7CMH2DRBFVlrmaOBgfgH4ZEGnbCU1TzORwca03QmhSrleuNkdV1UBmi8ttbn3e+wzuIUAAAAB93nVNbnS+dYBpAAC8MX+HpVau4mTiMdUny9C+1e7YgvcYboIrW5E7CeozlPq9ANkPgMdY7VniiYuLq7LzDKZP</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
