@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DBAurorita_Excel"
+  DTS:DTSID="{083130AD-B8A9-49DB-B532-037D64736242}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=vps-1827216-x.dattaweb.com;User ID=SSD;Initial Catalog=Aurorita_Excel;Provider=MSOLEDBSQL.1;Application Name=SSIS-Package1-{083130AD-B8A9-49DB-B532-037D64736242}vps-1827216-x.dattaweb.com.Aurorita_Excel.SSD;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbFE4hc9JCUCUhYejWQd8aQAAAAACAAAAAAAQZgAAAAEAACAAAAA5sBUc7MAGJEx0R2VOtzQAHTcC+HI3kfEeJt0VneNdFAAAAAAOgAAAAAIAACAAAAC0xmkpmklBCdmgwOiQRZEtwS9mXwesagBq/XIXyFmS0oAAAAAbROv/Bsx4SSssK9E+OnLT8nyFfznnIgAROAc1hPLVla6xWsHVyDvg7BDpJcNc1tp5qkaK4PUPRy7b8IdX9BK5/QDYzi1P1G11p/KaHEAuGhu2D/kR6ATRzoGT5tcEfH+G21XBkHRMQbB0BM6iMZAecFplE/c5heDnIDlvJc5/4UAAAADeXeP8692ZtUwz5/rafmdvSKoB/QXPCqwYNCEbpZP6rtJyOMCiNF2SaJhKdCPdaProPtB3VEARdMWZRk9a8Qh7</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
