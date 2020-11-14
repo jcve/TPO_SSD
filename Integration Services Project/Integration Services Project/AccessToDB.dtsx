@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="57"
-  DTS:VersionGUID="{97A15E9A-9EC3-47D7-A996-C634B2A1FED0}">
+  DTS:VersionBuild="64"
+  DTS:VersionGUID="{104DB764-CDA1-4DBB-925D-B59BC2C08FB8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -71,7 +71,7 @@
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="50"
+                      length="100"
                       lineageId="Package\Categorias\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NombreCategoría2]"
                       name="Copy of NombreCategoría2"
                       truncationRowDisposition="FailComponent">
@@ -217,16 +217,16 @@
                       refId="Package\Categorias\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of NombreCategoría2]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="100"
                       cachedName="Copy of NombreCategoría2"
-                      externalMetadataColumnId="Package\Categorias\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreCategoría]"
+                      externalMetadataColumnId="Package\Categorias\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreCategoria]"
                       lineageId="Package\Categorias\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NombreCategoría2]" />
                     <inputColumn
                       refId="Package\Categorias\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Descripción2]"
                       cachedCodepage="1252"
                       cachedDataType="text"
                       cachedName="Copy of Descripción2"
-                      externalMetadataColumnId="Package\Categorias\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descripción]"
+                      externalMetadataColumnId="Package\Categorias\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descripcion]"
                       lineageId="Package\Categorias\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Descripción2]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -236,16 +236,17 @@
                       dataType="i4"
                       name="Id" />
                     <externalMetadataColumn
-                      refId="Package\Categorias\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreCategoría]"
+                      refId="Package\Categorias\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreCategoria]"
                       codePage="1252"
                       dataType="str"
                       length="100"
-                      name="NombreCategoría" />
+                      name="NombreCategoria" />
                     <externalMetadataColumn
-                      refId="Package\Categorias\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descripción]"
+                      refId="Package\Categorias\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descripcion]"
                       codePage="1252"
-                      dataType="text"
-                      name="Descripción" />
+                      dataType="str"
+                      length="100"
+                      name="Descripcion" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1255,6 +1256,11 @@
                       dataType="wstr"
                       length="24"
                       name="Fax" />
+                    <externalMetadataColumn
+                      refId="Package\Clientes\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F12]"
+                      dataType="wstr"
+                      length="255"
+                      name="F12" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -4526,6 +4532,111 @@
                       dataType="wstr"
                       length="15"
                       name="PaísDestinatario" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Field1]"
+                      dataType="wstr"
+                      length="255"
+                      name="Field1" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Field2]"
+                      dataType="wstr"
+                      length="255"
+                      name="Field2" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F17]"
+                      dataType="wstr"
+                      length="255"
+                      name="F17" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F18]"
+                      dataType="wstr"
+                      length="255"
+                      name="F18" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F19]"
+                      dataType="wstr"
+                      length="255"
+                      name="F19" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F20]"
+                      dataType="wstr"
+                      length="255"
+                      name="F20" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F21]"
+                      dataType="wstr"
+                      length="255"
+                      name="F21" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F22]"
+                      dataType="wstr"
+                      length="255"
+                      name="F22" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F23]"
+                      dataType="wstr"
+                      length="255"
+                      name="F23" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F24]"
+                      dataType="wstr"
+                      length="255"
+                      name="F24" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F25]"
+                      dataType="wstr"
+                      length="255"
+                      name="F25" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F26]"
+                      dataType="wstr"
+                      length="255"
+                      name="F26" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F27]"
+                      dataType="wstr"
+                      length="255"
+                      name="F27" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F28]"
+                      dataType="wstr"
+                      length="255"
+                      name="F28" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F29]"
+                      dataType="wstr"
+                      length="255"
+                      name="F29" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F30]"
+                      dataType="wstr"
+                      length="255"
+                      name="F30" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F31]"
+                      dataType="wstr"
+                      length="255"
+                      name="F31" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F32]"
+                      dataType="wstr"
+                      length="255"
+                      name="F32" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F33]"
+                      dataType="wstr"
+                      length="255"
+                      name="F33" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F34]"
+                      dataType="wstr"
+                      length="255"
+                      name="F34" />
+                    <externalMetadataColumn
+                      refId="Package\Pedidos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F35]"
+                      dataType="wstr"
+                      length="255"
+                      name="F35" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -4699,8 +4810,7 @@
                       lineageId="Package\Productos\OLE DB Source.Outputs[OLE DB Source Output].Columns[CantidadPorUnidad]" />
                     <inputColumn
                       refId="Package\Productos\Data Conversion.Inputs[Data Conversion Input].Columns[PrecioUnidad]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
+                      cachedDataType="cy"
                       cachedName="PrecioUnidad"
                       lineageId="Package\Productos\OLE DB Source.Outputs[OLE DB Source Output].Columns[PrecioUnidad]" />
                     <inputColumn
@@ -5304,11 +5414,10 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Productos\OLE DB Source.Outputs[OLE DB Source Output].Columns[PrecioUnidad]"
-                      dataType="wstr"
+                      dataType="cy"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Productos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PrecioUnidad]"
-                      length="255"
                       lineageId="Package\Productos\OLE DB Source.Outputs[OLE DB Source Output].Columns[PrecioUnidad]"
                       name="PrecioUnidad"
                       truncationRowDisposition="FailComponent" />
@@ -5375,8 +5484,7 @@
                       name="CantidadPorUnidad" />
                     <externalMetadataColumn
                       refId="Package\Productos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PrecioUnidad]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="cy"
                       name="PrecioUnidad" />
                     <externalMetadataColumn
                       refId="Package\Productos\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnidadesEnExistencia]"
@@ -5436,8 +5544,7 @@
                       name="CantidadPorUnidad" />
                     <outputColumn
                       refId="Package\Productos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PrecioUnidad]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="cy"
                       lineageId="Package\Productos\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PrecioUnidad]"
                       name="PrecioUnidad" />
                     <outputColumn
@@ -7021,7 +7128,7 @@
     design-time-name="Package\CompaniaEnvios">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="177,42"
           Id="Package\CompaniaEnvios\OLE DB Destination"
@@ -7053,7 +7160,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7075,7 +7184,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7111,7 +7222,7 @@
     design-time-name="Package\DetallesPedidos">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="157,42"
           Id="Package\DetallesPedidos\OLE DB Source"
@@ -7143,7 +7254,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7165,7 +7278,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7201,7 +7316,7 @@
     design-time-name="Package\Empleados">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="157,42"
           Id="Package\Empleados\OLE DB Source"
@@ -7233,7 +7348,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7255,7 +7372,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7471,15 +7590,19 @@
     design-time-name="Package\Proveedores">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="157,42"
-          Id="Package\Proveedores\OLE DB Source"
-          TopLeft="80.5,34.5" />
+          Size="177,42"
+          Id="Package\Proveedores\OLE DB Destination"
+          TopLeft="65.5,252.5" />
         <NodeLayout
           Size="161,42"
           Id="Package\Proveedores\Data Conversion"
           TopLeft="77.5,136.5" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Proveedores\OLE DB Source"
+          TopLeft="80.5,34.5" />
         <EdgeLayout
           Id="Package\Proveedores.Paths[OLE DB Source Output]"
           TopLeft="158.5,76.5">
@@ -7499,13 +7622,11 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Proveedores\OLE DB Destination"
-          TopLeft="65.5,252.5" />
         <EdgeLayout
           Id="Package\Proveedores.Paths[Data Conversion Output]"
           TopLeft="156,178.5">
@@ -7525,7 +7646,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

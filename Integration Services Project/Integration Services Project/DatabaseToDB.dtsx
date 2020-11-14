@@ -11,42 +11,10 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="40"
-  DTS:VersionGUID="{E38A590C-5D62-4E12-B01E-3B606B0AC585}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{0A0B7483-085D-4CB8-9A6D-99F551CEEC49}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DBAurorita]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{E852A310-3152-4157-9212-5EC1F8359B15}"
-      DTS:ObjectName="DBAurorita">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=vps-1827216-x.dattaweb.com;User ID=SSD;Initial Catalog=Aurorita;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbFE4hc9JCUCUhYejWQd8aQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD3et8thCNNF182CduYMe9yLVhMwcxNf+SNr4VC+OMEHgAAAAAOgAAAAAIAACAAAACiMc7AIr4Kx2jn/jLjKq5Gf01bGdIRt2u65xN0JJps6BAAAAA0jK3W7uCFwm9nd3eT46zhQAAAAH1+ier+vKKjQO1XuXGqCz3bJl0XeNujDQJ5YdVLWAAJ8Z7V/uQVA5DYqTDVeHx12Iu/Z7KeFpWcATM3uqqsVhE</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DBAurorita_Access2]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{A77A390A-B464-4624-A3E5-42741BAB6D9E}"
-      DTS:ObjectName="DBAurorita_Access2">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=vps-1827216-x.dattaweb.com;User ID=SSD;Initial Catalog=Aurorita_Access;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbFE4hc9JCUCUhYejWQd8aQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAsMf4SjRok3/X1zbsVdpFJ0jLYnhUW0MWdSjkjcG+8XwAAAAAOgAAAAAIAACAAAACmhLLDt7oL54Iznk/l3nrenap4uOqzpLkd2TnnHkyTVRAAAADLVnDcvCTR4MRRwnL/BQfEQAAAAOdn/dWVTynG3qsMaUfu8T80D+lYp84c07lwvOEYuEjm/FoFuIePPTZZDuozlmlaVf319hOhNGh85zyXWIXVtAA</DTS:Password>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -122,8 +90,8 @@
               <connections>
                 <connection
                   refId="Package\Años\Destino de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita]"
+                  connectionManagerID="{E852A310-3152-4157-9212-5EC1F8359B15}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -242,8 +210,8 @@ order by anio</property>
               <connections>
                 <connection
                   refId="Package\Años\Origen de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita_Access2]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita_Access2]"
+                  connectionManagerID="{A77A390A-B464-4624-A3E5-42741BAB6D9E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita_Access2]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -381,8 +349,8 @@ order by anio</property>
               <connections>
                 <connection
                   refId="Package\Cargos\Destino de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita]"
+                  connectionManagerID="{E852A310-3152-4157-9212-5EC1F8359B15}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -496,8 +464,8 @@ select distinct cargo  from Empleados</property>
               <connections>
                 <connection
                   refId="Package\Cargos\Origen de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita_Access2]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita_Access2]"
+                  connectionManagerID="{A77A390A-B464-4624-A3E5-42741BAB6D9E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita_Access2]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -749,8 +717,8 @@ select distinct cargo  from Empleados</property>
               <connections>
                 <connection
                   refId="Package\Categorias\Destino de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita]"
+                  connectionManagerID="{E852A310-3152-4157-9212-5EC1F8359B15}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -876,8 +844,8 @@ select distinct cargo  from Empleados</property>
               <connections>
                 <connection
                   refId="Package\Categorias\Origen de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita_Access2]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita_Access2]"
+                  connectionManagerID="{A77A390A-B464-4624-A3E5-42741BAB6D9E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita_Access2]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -1068,8 +1036,8 @@ select distinct cargo  from Empleados</property>
               <connections>
                 <connection
                   refId="Package\Compañia envios\Destino de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita]"
+                  connectionManagerID="{E852A310-3152-4157-9212-5EC1F8359B15}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -1198,8 +1166,8 @@ select distinct cargo  from Empleados</property>
               <connections>
                 <connection
                   refId="Package\Compañia envios\Origen de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita_Access2]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita_Access2]"
+                  connectionManagerID="{A77A390A-B464-4624-A3E5-42741BAB6D9E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita_Access2]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -1487,8 +1455,8 @@ select distinct cargo  from Empleados</property>
               <connections>
                 <connection
                   refId="Package\Dias Semana\Dias Semana.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita]"
+                  connectionManagerID="{E852A310-3152-4157-9212-5EC1F8359B15}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -1617,8 +1585,8 @@ from (
               <connections>
                 <connection
                   refId="Package\Dias Semana\Fechas.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita_Access2]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita_Access2]"
+                  connectionManagerID="{A77A390A-B464-4624-A3E5-42741BAB6D9E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita_Access2]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -1782,8 +1750,8 @@ from (
               <connections>
                 <connection
                   refId="Package\Estaciones\Destino de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita]"
+                  connectionManagerID="{E852A310-3152-4157-9212-5EC1F8359B15}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -1906,8 +1874,8 @@ group by estacion</property>
               <connections>
                 <connection
                   refId="Package\Estaciones\Origen de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita_Access2]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita_Access2]"
+                  connectionManagerID="{A77A390A-B464-4624-A3E5-42741BAB6D9E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita_Access2]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -2099,8 +2067,8 @@ inner join [Aurorita].[dbo].[Dim_Estacion] auroEstacion on auroEstacion.Nombre =
               <connections>
                 <connection
                   refId="Package\Meses\Fechas.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita_Access2]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita_Access2]"
+                  connectionManagerID="{A77A390A-B464-4624-A3E5-42741BAB6D9E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita_Access2]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -2309,8 +2277,8 @@ inner join [Aurorita].[dbo].[Dim_Estacion] auroEstacion on auroEstacion.Nombre =
               <connections>
                 <connection
                   refId="Package\Meses\Meses.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita]"
+                  connectionManagerID="{E852A310-3152-4157-9212-5EC1F8359B15}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -2495,8 +2463,8 @@ inner join [Aurorita].[dbo].[Dim_Estacion] auroEstacion on auroEstacion.Nombre =
               <connections>
                 <connection
                   refId="Package\Paises\Destino de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita]"
+                  connectionManagerID="{E852A310-3152-4157-9212-5EC1F8359B15}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -2612,8 +2580,8 @@ select [PaisDestinatario] Pais from pedidos</property>
               <connections>
                 <connection
                   refId="Package\Paises\Origen de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita_Access2]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita_Access2]"
+                  connectionManagerID="{A77A390A-B464-4624-A3E5-42741BAB6D9E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita_Access2]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -2757,8 +2725,8 @@ select [PaisDestinatario] Pais from pedidos</property>
               <connections>
                 <connection
                   refId="Package\Regiones\Destino de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita]"
+                  connectionManagerID="{E852A310-3152-4157-9212-5EC1F8359B15}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
@@ -2879,8 +2847,8 @@ order by region</property>
               <connections>
                 <connection
                   refId="Package\Regiones\Origen de OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DBAurorita_Access2]"
-                  connectionManagerRefId="Package.ConnectionManagers[DBAurorita_Access2]"
+                  connectionManagerID="{A77A390A-B464-4624-A3E5-42741BAB6D9E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita_Access2]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                   name="OleDbConnection" />
               </connections>
