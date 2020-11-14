@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="ExcelToDB"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{8584125C-5F59-4DBD-8E0C-9840086979FC}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{D8275B51-DA23-42D0-9126-A9A05BA0D117}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -4626,6 +4626,1934 @@
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Presupuesto 2020"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{16FC9EFE-EDC6-425F-9380-3DB993765E13}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Presupuesto 2020"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Presupuesto 2020\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Presupuesto 2020\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Data Conversion.Inputs[Data Conversion Input].Columns[PaísDestinatario]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PaísDestinatario"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[PaísDestinatario]" />
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Data Conversion.Inputs[Data Conversion Input].Columns[NombreCategoría]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NombreCategoría"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[NombreCategoría]" />
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Data Conversion.Inputs[Data Conversion Input].Columns[Valor]"
+                      cachedDataType="r8"
+                      cachedName="Valor"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[Valor]" />
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Data Conversion.Inputs[Data Conversion Input].Columns[Periodo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Periodo"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[Periodo]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Presupuesto 2020\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PaísDestinatario]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PaísDestinatario]"
+                      name="Copy of PaísDestinatario"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[PaísDestinatario]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NombreCategoría]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NombreCategoría]"
+                      name="Copy of NombreCategoría"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[NombreCategoría]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Valor]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Valor]"
+                      name="Copy of Valor"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[Valor]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="7"
+                      lineageId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]"
+                      name="Copy of Periodo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[Periodo]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Presupuesto 2020\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Presupuesto 2020\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'PPTO 2020$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Presupuesto 2020\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="{2AF5BF2B-FE8B-4CD2-A3DB-2796932B7C93}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Excel_File]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[PaísDestinatario]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[PaísDestinatario]"
+                      length="255"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[PaísDestinatario]"
+                      name="PaísDestinatario"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[NombreCategoría]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[NombreCategoría]"
+                      length="255"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[NombreCategoría]"
+                      name="NombreCategoría"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[ene#-20]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[ene#-20]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[ene#-20]"
+                      name="ene#-20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[feb#-20]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[feb#-20]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[feb#-20]"
+                      name="feb#-20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[mar#-20]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[mar#-20]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[mar#-20]"
+                      name="mar#-20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[abr#-20]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[abr#-20]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[abr#-20]"
+                      name="abr#-20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[may#-20]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[may#-20]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[may#-20]"
+                      name="may#-20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[jun#-20]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[jun#-20]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[jun#-20]"
+                      name="jun#-20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[jul#-20]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[jul#-20]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[jul#-20]"
+                      name="jul#-20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[ago#-20]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[ago#-20]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[ago#-20]"
+                      name="ago#-20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[sep#-20]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[sep#-20]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[sep#-20]"
+                      name="sep#-20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[oct#-20]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[oct#-20]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[oct#-20]"
+                      name="oct#-20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[nov#-20]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[nov#-20]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[nov#-20]"
+                      name="nov#-20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[dic#-20]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[dic#-20]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[dic#-20]"
+                      name="dic#-20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F15]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F15]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F15]"
+                      name="F15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F16]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F16]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F16]"
+                      name="F16"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F17]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F17]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F17]"
+                      name="F17"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F18]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F18]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F18]"
+                      name="F18"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F19]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F19]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F19]"
+                      name="F19"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F20]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F20]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F20]"
+                      name="F20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F21]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F21]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F21]"
+                      name="F21"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F22]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F22]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F22]"
+                      name="F22"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F23]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F23]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F23]"
+                      name="F23"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F24]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F24]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F24]"
+                      name="F24"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F25]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F25]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F25]"
+                      name="F25"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F26]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F26]"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F26]"
+                      name="F26"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[PaísDestinatario]"
+                      dataType="wstr"
+                      length="255"
+                      name="PaísDestinatario" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[NombreCategoría]"
+                      dataType="wstr"
+                      length="255"
+                      name="NombreCategoría" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[ene#-20]"
+                      dataType="r8"
+                      name="ene#-20" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[feb#-20]"
+                      dataType="r8"
+                      name="feb#-20" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[mar#-20]"
+                      dataType="r8"
+                      name="mar#-20" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[abr#-20]"
+                      dataType="r8"
+                      name="abr#-20" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[may#-20]"
+                      dataType="r8"
+                      name="may#-20" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[jun#-20]"
+                      dataType="r8"
+                      name="jun#-20" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[jul#-20]"
+                      dataType="r8"
+                      name="jul#-20" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[ago#-20]"
+                      dataType="r8"
+                      name="ago#-20" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[sep#-20]"
+                      dataType="r8"
+                      name="sep#-20" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[oct#-20]"
+                      dataType="r8"
+                      name="oct#-20" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[nov#-20]"
+                      dataType="r8"
+                      name="nov#-20" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[dic#-20]"
+                      dataType="r8"
+                      name="dic#-20" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F15]"
+                      dataType="r8"
+                      name="F15" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F16]"
+                      dataType="r8"
+                      name="F16" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F17]"
+                      dataType="r8"
+                      name="F17" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F18]"
+                      dataType="r8"
+                      name="F18" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F19]"
+                      dataType="r8"
+                      name="F19" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F20]"
+                      dataType="r8"
+                      name="F20" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F21]"
+                      dataType="r8"
+                      name="F21" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F22]"
+                      dataType="r8"
+                      name="F22" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F23]"
+                      dataType="r8"
+                      name="F23" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F24]"
+                      dataType="r8"
+                      name="F24" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F25]"
+                      dataType="r8"
+                      name="F25" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].ExternalColumns[F26]"
+                      dataType="r8"
+                      name="F26" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[PaísDestinatario]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[PaísDestinatario]"
+                      name="PaísDestinatario" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[NombreCategoría]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[NombreCategoría]"
+                      name="NombreCategoría" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[ene#-20]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[ene#-20]"
+                      name="ene#-20" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[feb#-20]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[feb#-20]"
+                      name="feb#-20" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[mar#-20]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[mar#-20]"
+                      name="mar#-20" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[abr#-20]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[abr#-20]"
+                      name="abr#-20" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[may#-20]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[may#-20]"
+                      name="may#-20" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[jun#-20]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[jun#-20]"
+                      name="jun#-20" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[jul#-20]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[jul#-20]"
+                      name="jul#-20" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[ago#-20]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[ago#-20]"
+                      name="ago#-20" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[sep#-20]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[sep#-20]"
+                      name="sep#-20" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[oct#-20]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[oct#-20]"
+                      name="oct#-20" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[nov#-20]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[nov#-20]"
+                      name="nov#-20" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[dic#-20]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[dic#-20]"
+                      name="dic#-20" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F15]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F15]"
+                      name="F15" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F16]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F16]"
+                      name="F16" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F17]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F17]"
+                      name="F17" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F18]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F18]"
+                      name="F18" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F19]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F19]"
+                      name="F19" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F20]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F20]"
+                      name="F20" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F21]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F21]"
+                      name="F21" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F22]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F22]"
+                      name="F22" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F23]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F23]"
+                      name="F23" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F24]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F24]"
+                      name="F24" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F25]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F25]"
+                      name="F25" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F26]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[F26]"
+                      name="F26" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Presupuesto 2020\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Presupuesto]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Presupuesto 2020\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{083130AD-B8A9-49DB-B532-037D64736242}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DBAurorita_Excel]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of PaísDestinatario]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of PaísDestinatario"
+                      externalMetadataColumnId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PaisDestinatario]"
+                      lineageId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PaísDestinatario]" />
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of NombreCategoría]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of NombreCategoría"
+                      externalMetadataColumnId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreCategoria]"
+                      lineageId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NombreCategoría]" />
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Valor]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Valor"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor]"
+                      lineageId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Valor]" />
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Periodo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="7"
+                      cachedName="Copy of Periodo"
+                      externalMetadataColumnId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Periodo]"
+                      lineageId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PaisDestinatario]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PaisDestinatario" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreCategoria]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NombreCategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Valor]"
+                      dataType="i4"
+                      name="Valor" />
+                    <externalMetadataColumn
+                      refId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Periodo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="Periodo" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Presupuesto 2020\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Presupuesto 2020\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Presupuesto 2020\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Presupuesto 2020\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1].Columns[Periodo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Periodo"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Periodo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[Periodo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1].Columns[Valor]"
+                      cachedDataType="r8"
+                      cachedName="Valor"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Valor]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[Valor]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1].Columns[PaísDestinatario]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PaísDestinatario"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[PaísDestinatario]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[PaísDestinatario]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1].Columns[NombreCategoría]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NombreCategoría"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[NombreCategoría]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[NombreCategoría]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1].Columns[F15]"
+                      cachedDataType="r8"
+                      cachedName="F15"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F15]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F15]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1].Columns[F16]"
+                      cachedDataType="r8"
+                      cachedName="F16"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F16]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F16]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1].Columns[F17]"
+                      cachedDataType="r8"
+                      cachedName="F17"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F17]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F17]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1].Columns[F18]"
+                      cachedDataType="r8"
+                      cachedName="F18"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F18]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F18]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1].Columns[F19]"
+                      cachedDataType="r8"
+                      cachedName="F19"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F19]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F19]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1].Columns[F20]"
+                      cachedDataType="r8"
+                      cachedName="F20"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F20]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F20]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1].Columns[F21]"
+                      cachedDataType="r8"
+                      cachedName="F21"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F21]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F21]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1].Columns[F22]"
+                      cachedDataType="r8"
+                      cachedName="F22"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F22]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F22]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1].Columns[F23]"
+                      cachedDataType="r8"
+                      cachedName="F23"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F23]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F23]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1].Columns[F24]"
+                      cachedDataType="r8"
+                      cachedName="F24"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F24]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F24]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1].Columns[F25]"
+                      cachedDataType="r8"
+                      cachedName="F25"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F25]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F25]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1].Columns[F26]"
+                      cachedDataType="r8"
+                      cachedName="F26"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F26]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F26]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 2]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[Periodo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[Periodo]"
+                      name="Periodo" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[Valor]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[Valor]"
+                      name="Valor" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[PaísDestinatario]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[PaísDestinatario]"
+                      name="PaísDestinatario" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[NombreCategoría]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[NombreCategoría]"
+                      name="NombreCategoría" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F15]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F15]"
+                      name="F15" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F16]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F16]"
+                      name="F16" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F17]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F17]"
+                      name="F17" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F18]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F18]"
+                      name="F18" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F19]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F19]"
+                      name="F19" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F20]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F20]"
+                      name="F20" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F21]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F21]"
+                      name="F21" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F22]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F22]"
+                      name="F22" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F23]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F23]"
+                      name="F23" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F24]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F24]"
+                      name="F24" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F25]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F25]"
+                      name="F25" />
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F26]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1].Columns[F26]"
+                      name="F26" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Presupuesto 2020\Unpivot"
+              componentClassID="Microsoft.UnPivot"
+              contactInfo="Unpivot;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Expands an un-normalized data flow into a more normalized version. Values from multiple columns of a single record expand to multiple records in a single column. For example, expand a table that lists athletic scores with a column for each game to more records and a single score column."
+              name="Unpivot">
+              <inputs>
+                <input
+                  refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input]"
+                  hasSideEffects="true"
+                  name="Unpivot Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[ene#-20]"
+                      cachedDataType="r8"
+                      cachedName="ene#-20"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[ene#-20]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2020/01</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[feb#-20]"
+                      cachedDataType="r8"
+                      cachedName="feb#-20"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[feb#-20]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2020/02</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[mar#-20]"
+                      cachedDataType="r8"
+                      cachedName="mar#-20"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[mar#-20]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2020/03</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[abr#-20]"
+                      cachedDataType="r8"
+                      cachedName="abr#-20"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[abr#-20]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2020/04</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[may#-20]"
+                      cachedDataType="r8"
+                      cachedName="may#-20"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[may#-20]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2020/05</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[jun#-20]"
+                      cachedDataType="r8"
+                      cachedName="jun#-20"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[jun#-20]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2020/06</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[jul#-20]"
+                      cachedDataType="r8"
+                      cachedName="jul#-20"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[jul#-20]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2020/07</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[ago#-20]"
+                      cachedDataType="r8"
+                      cachedName="ago#-20"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[ago#-20]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2020/08</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[sep#-20]"
+                      cachedDataType="r8"
+                      cachedName="sep#-20"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[sep#-20]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2020/09</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[oct#-20]"
+                      cachedDataType="r8"
+                      cachedName="oct#-20"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[oct#-20]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2020/10</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[nov#-20]"
+                      cachedDataType="r8"
+                      cachedName="nov#-20"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[nov#-20]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2020/11</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[dic#-20]"
+                      cachedDataType="r8"
+                      cachedName="dic#-20"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[dic#-20]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Valor]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">2020/12</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[PaísDestinatario]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PaísDestinatario"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[PaísDestinatario]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[PaísDestinatario]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[NombreCategoría]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NombreCategoría"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[NombreCategoría]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[NombreCategoría]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[F15]"
+                      cachedDataType="r8"
+                      cachedName="F15"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F15]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F15]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[F16]"
+                      cachedDataType="r8"
+                      cachedName="F16"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F16]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F16]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[F17]"
+                      cachedDataType="r8"
+                      cachedName="F17"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F17]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F17]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[F18]"
+                      cachedDataType="r8"
+                      cachedName="F18"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F18]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F18]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[F19]"
+                      cachedDataType="r8"
+                      cachedName="F19"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F19]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F19]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[F20]"
+                      cachedDataType="r8"
+                      cachedName="F20"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F20]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F20]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[F21]"
+                      cachedDataType="r8"
+                      cachedName="F21"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F21]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F21]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[F22]"
+                      cachedDataType="r8"
+                      cachedName="F22"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F22]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F22]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[F23]"
+                      cachedDataType="r8"
+                      cachedName="F23"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F23]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F23]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[F24]"
+                      cachedDataType="r8"
+                      cachedName="F24"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F24]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F24]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[F25]"
+                      cachedDataType="r8"
+                      cachedName="F25"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F25]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F25]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input].Columns[F26]"
+                      cachedDataType="r8"
+                      cachedName="F26"
+                      lineageId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output].Columns[F26]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F26]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output]"
+                  name="Unpivot Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Periodo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Periodo]"
+                      name="Periodo">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">true</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Valor]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[Valor]"
+                      name="Valor">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[PaísDestinatario]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[PaísDestinatario]"
+                      name="PaísDestinatario">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[NombreCategoría]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[NombreCategoría]"
+                      name="NombreCategoría">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F15]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F15]"
+                      name="F15">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F16]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F16]"
+                      name="F16">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F17]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F17]"
+                      name="F17">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F18]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F18]"
+                      name="F18">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F19]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F19]"
+                      name="F19">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F20]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F20]"
+                      name="F20">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F21]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F21]"
+                      name="F21">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F22]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F22]"
+                      name="F22">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F23]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F23]"
+                      name="F23">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F24]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F24]"
+                      name="F24">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F25]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F25]"
+                      name="F25">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F26]"
+                      dataType="r8"
+                      lineageId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output].Columns[F26]"
+                      name="F26">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Presupuesto 2020.Paths[Data Conversion Output]"
+              endId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Presupuesto 2020.Paths[Excel Source Output]"
+              endId="Package\Presupuesto 2020\Unpivot.Inputs[Unpivot Input]"
+              name="Excel Source Output"
+              startId="Package\Presupuesto 2020\Excel Source.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Presupuesto 2020.Paths[Union All Output 1]"
+              endId="Package\Presupuesto 2020\Data Conversion.Inputs[Data Conversion Input]"
+              name="Union All Output 1"
+              startId="Package\Presupuesto 2020\Union All.Outputs[Union All Output 1]" />
+            <path
+              refId="Package\Presupuesto 2020.Paths[Unpivot Output]"
+              endId="Package\Presupuesto 2020\Union All.Inputs[Union All Input 1]"
+              name="Unpivot Output"
+              startId="Package\Presupuesto 2020\Unpivot.Outputs[Unpivot Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -4660,6 +6588,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Presupuesto 2019" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{89DA35AB-FE44-4803-AC2E-4A6CCB36ED8F}"
+      DTS:From="Package\Limpieza"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Presupuesto 2020" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -4680,45 +6616,45 @@
         <NodeLayout
           Size="168,42"
           Id="Package\Presupuesto 2016"
-          TopLeft="212.5,180.5" />
+          TopLeft="51.5,183.5" />
         <NodeLayout
           Size="168,42"
           Id="Package\Presupuesto 2017"
-          TopLeft="397.5,180.5" />
+          TopLeft="236.5,183.5" />
         <NodeLayout
           Size="168,42"
           Id="Package\Presupuesto 2018"
-          TopLeft="576.5,180.5" />
+          TopLeft="415.5,183.5" />
         <NodeLayout
           Size="168,42"
           Id="Package\Presupuesto 2019"
-          TopLeft="756.5,179.5" />
+          TopLeft="595.5,182.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="533.5,95.5">
+          TopLeft="529.666666666667,95.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-237,85"
+              EndConnector="-394.166666666667,88"
               Start="0,0"
-              End="-237,77.5">
+              End="-394.166666666667,80.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.9322033898305" />
+                    End="0,20.0787401574803" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.9322033898305"
-                    Point2="0,25.9322033898305"
-                    Point3="-4,25.9322033898305" />
+                    Point1="0,20.0787401574803"
+                    Point2="0,24.0787401574803"
+                    Point3="-4,24.0787401574803" />
                   <mssgle:LineSegment
-                    End="-233,25.9322033898305" />
+                    End="-390.166666666667,24.0787401574803" />
                   <mssgle:CubicBezierSegment
-                    Point1="-233,25.9322033898305"
-                    Point2="-237,25.9322033898305"
-                    Point3="-237,29.9322033898305" />
+                    Point1="-390.166666666667,24.0787401574803"
+                    Point2="-394.166666666667,24.0787401574803"
+                    Point3="-394.166666666667,28.0787401574803" />
                   <mssgle:LineSegment
-                    End="-237,77.5" />
+                    End="-394.166666666667,80.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4729,30 +6665,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="556.5,95.5">
+          TopLeft="548.833333333333,95.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-75,85"
+              EndConnector="-228.333333333333,88"
               Start="0,0"
-              End="-75,77.5">
+              End="-228.333333333333,80.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.1165919282511" />
+                    End="0,31.8780096308186" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,34.1165919282511"
-                    Point2="0,38.1165919282511"
-                    Point3="-4,38.1165919282511" />
+                    Point1="0,31.8780096308186"
+                    Point2="0,35.8780096308186"
+                    Point3="-4,35.8780096308186" />
                   <mssgle:LineSegment
-                    End="-71,38.1165919282511" />
+                    End="-224.333333333333,35.8780096308186" />
                   <mssgle:CubicBezierSegment
-                    Point1="-71,38.1165919282511"
-                    Point2="-75,38.1165919282511"
-                    Point3="-75,42.1165919282511" />
+                    Point1="-224.333333333333,35.8780096308186"
+                    Point2="-228.333333333333,35.8780096308186"
+                    Point3="-228.333333333333,39.8780096308186" />
                   <mssgle:LineSegment
-                    End="-75,77.5" />
+                    End="-228.333333333333,80.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4763,30 +6699,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="579.5,95.5">
+          TopLeft="568,95.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="81,85"
+              EndConnector="-68.5,88"
               Start="0,0"
-              End="81,77.5">
+              End="-68.5,80.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.1165919282511" />
+                    End="0,40" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,34.1165919282511"
-                    Point2="0,38.1165919282511"
-                    Point3="4,38.1165919282511" />
+                    Point1="0,40"
+                    Point2="0,44"
+                    Point3="-4,44" />
                   <mssgle:LineSegment
-                    End="77,38.1165919282511" />
+                    End="-64.5,44" />
                   <mssgle:CubicBezierSegment
-                    Point1="77,38.1165919282511"
-                    Point2="81,38.1165919282511"
-                    Point3="81,42.1165919282511" />
+                    Point1="-64.5,44"
+                    Point2="-68.5,44"
+                    Point3="-68.5,48" />
                   <mssgle:LineSegment
-                    End="81,77.5" />
+                    End="-68.5,80.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4797,30 +6733,68 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="602.5,95.5">
+          TopLeft="587.166666666667,95.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="238,84"
+              EndConnector="92.3333333333334,87"
               Start="0,0"
-              End="238,76.5">
+              End="92.3333333333334,79.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.6271186440678" />
+                    End="0,31.470304975923" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.6271186440678"
-                    Point2="0,25.6271186440678"
-                    Point3="4,25.6271186440678" />
+                    Point1="0,31.470304975923"
+                    Point2="0,35.470304975923"
+                    Point3="4,35.470304975923" />
                   <mssgle:LineSegment
-                    End="234,25.6271186440678" />
+                    End="88.3333333333334,35.470304975923" />
                   <mssgle:CubicBezierSegment
-                    Point1="234,25.6271186440678"
-                    Point2="238,25.6271186440678"
-                    Point3="238,29.6271186440678" />
+                    Point1="88.3333333333334,35.470304975923"
+                    Point2="92.3333333333334,35.470304975923"
+                    Point3="92.3333333333334,39.470304975923" />
                   <mssgle:LineSegment
-                    End="238,76.5" />
+                    End="92.3333333333334,79.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Presupuesto 2020"
+          TopLeft="779,184" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="606.333333333333,95.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="256.666666666667,88.5"
+              Start="0,0"
+              End="256.666666666667,81">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2155511811023" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2155511811023"
+                    Point2="0,24.2155511811023"
+                    Point3="4,24.2155511811023" />
+                  <mssgle:LineSegment
+                    End="252.666666666667,24.2155511811023" />
+                  <mssgle:CubicBezierSegment
+                    Point1="252.666666666667,24.2155511811023"
+                    Point2="256.666666666667,24.2155511811023"
+                    Point3="256.666666666667,28.2155511811023" />
+                  <mssgle:LineSegment
+                    End="256.666666666667,81" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5136,11 +7110,23 @@
     design-time-name="Package\Presupuesto 2018">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Presupuesto 2018\OLE DB Destination"
+          TopLeft="373.5,385.5" />
         <NodeLayout
           Size="144,42"
           Id="Package\Presupuesto 2018\Excel Source"
           TopLeft="385.5,37.5" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Presupuesto 2018\Union All"
+          TopLeft="397.5,216.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Presupuesto 2018\Data Conversion"
+          TopLeft="378.5,296.5" />
         <NodeLayout
           Size="116,42"
           Id="Package\Presupuesto 2018\Unpivot"
@@ -5164,65 +7150,11 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Presupuesto 2018\Union All"
-          TopLeft="397.5,216.5" />
-        <EdgeLayout
-          Id="Package\Presupuesto 2018.Paths[Unpivot Output]"
-          TopLeft="459.25,176.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40"
-              Start="0,0"
-              End="0,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Presupuesto 2018\Data Conversion"
-          TopLeft="378.5,296.5" />
-        <EdgeLayout
-          Id="Package\Presupuesto 2018.Paths[Union All Output 1]"
-          TopLeft="459,258.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38"
-              Start="0,0"
-              End="0,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Presupuesto 2018\OLE DB Destination"
-          TopLeft="373.5,385.5" />
         <EdgeLayout
           Id="Package\Presupuesto 2018.Paths[Data Conversion Output]"
           TopLeft="460.5,338.5">
@@ -5242,123 +7174,57 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Presupuesto 2019">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="144,42"
-          Id="Package\Presupuesto 2019\Excel Source"
-          TopLeft="392.5,30.5" />
-        <NodeLayout
-          Size="116,42"
-          Id="Package\Presupuesto 2019\Unpivot"
-          TopLeft="400.5,122.5" />
         <EdgeLayout
-          Id="Package\Presupuesto 2019.Paths[Excel Source Output]"
-          TopLeft="461.5,72.5">
+          Id="Package\Presupuesto 2018.Paths[Unpivot Output]"
+          TopLeft="459.25,176.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50"
+              EndConnector="0,40"
               Start="0,0"
-              End="0,42.5">
+              End="0,32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.5" />
+                    End="0,32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Presupuesto 2019\Union All"
-          TopLeft="395.5,208.5" />
         <EdgeLayout
-          Id="Package\Presupuesto 2019.Paths[Unpivot Output]"
-          TopLeft="457.75,164.5">
+          Id="Package\Presupuesto 2018.Paths[Union All Output 1]"
+          TopLeft="459,258.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44"
+              EndConnector="0,38"
               Start="0,0"
-              End="0,36.5">
+              End="0,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.5" />
+                    End="0,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Presupuesto 2019\Data Conversion"
-          TopLeft="378.5,283.5" />
-        <EdgeLayout
-          Id="Package\Presupuesto 2019.Paths[Union All Output 1]"
-          TopLeft="458,250.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33"
-              Start="0,0"
-              End="0,25.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Presupuesto 2019\OLE DB Destination"
-          TopLeft="372.5,371.5" />
-        <EdgeLayout
-          Id="Package\Presupuesto 2019.Paths[Data Conversion Output]"
-          TopLeft="460,325.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46"
-              Start="0,0"
-              End="0,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5390,6 +7256,122 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Presupuesto 2019">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Presupuesto 2019\Union All"
+          TopLeft="395.5,208.5" />
+        <NodeLayout
+          Size="116,42"
+          Id="Package\Presupuesto 2019\Unpivot"
+          TopLeft="400.5,122.5" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Presupuesto 2019\Excel Source"
+          TopLeft="392.5,30.5" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Presupuesto 2019\OLE DB Destination"
+          TopLeft="372.5,371.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Presupuesto 2019\Data Conversion"
+          TopLeft="378.5,283.5" />
+        <EdgeLayout
+          Id="Package\Presupuesto 2019.Paths[Unpivot Output]"
+          TopLeft="457.75,164.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Presupuesto 2019.Paths[Union All Output 1]"
+          TopLeft="458,250.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Presupuesto 2019.Paths[Excel Source Output]"
+          TopLeft="461.5,72.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Presupuesto 2019.Paths[Data Conversion Output]"
+          TopLeft="460,325.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Presupuesto 2019\Excel Source">
     <Properties>
@@ -5405,6 +7387,148 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Presupuesto 2019\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Presupuesto 2020">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Presupuesto 2020\Excel Source"
+          TopLeft="139,62" />
+        <NodeLayout
+          Size="116,42"
+          Id="Package\Presupuesto 2020\Unpivot"
+          TopLeft="156,159" />
+        <EdgeLayout
+          Id="Package\Presupuesto 2020.Paths[Excel Source Output]"
+          TopLeft="212.5,104">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Presupuesto 2020\Union All"
+          TopLeft="147,243" />
+        <EdgeLayout
+          Id="Package\Presupuesto 2020.Paths[Unpivot Output]"
+          TopLeft="211.25,201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Presupuesto 2020\Data Conversion"
+          TopLeft="131,337" />
+        <EdgeLayout
+          Id="Package\Presupuesto 2020.Paths[Union All Output 1]"
+          TopLeft="210,285">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Presupuesto 2020\OLE DB Destination"
+          TopLeft="121,448" />
+        <EdgeLayout
+          Id="Package\Presupuesto 2020.Paths[Data Conversion Output]"
+          TopLeft="210.5,379">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69"
+              Start="0,0"
+              End="0,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Presupuesto 2020\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Presupuesto 2020\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
