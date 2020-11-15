@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="116"
-  DTS:VersionGUID="{DE1174BF-CE0C-469A-9A3F-F28D81A4943B}">
+  DTS:VersionBuild="123"
+  DTS:VersionGUID="{B433B722-2D97-4F46-B3E0-752FB2CA43B1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -3176,8 +3176,10 @@ where dc.Id is not null</property>
                       lineageId="Package\DetalleVentas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Cantidad]" />
                     <inputColumn
                       refId="Package\DetalleVentas\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Descuento]"
-                      cachedDataType="i4"
+                      cachedDataType="numeric"
                       cachedName="Descuento"
+                      cachedPrecision="18"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\DetalleVentas\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descuento]"
                       lineageId="Package\DetalleVentas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descuento]" />
                     <inputColumn
@@ -3272,7 +3274,7 @@ where dc.Id is not null</property>
   dpro.Id as IdProducto,
   CAST(ISNULL(replace(dp.Precio, ',', '.'), 0) as decimal(18,2)) as Precio,
   dp.Cantidad as Cantidad,
-  Descuento,
+  cast((Descuento*100) as int) as Descuento,
   dp.Id as IdDetalle
   FROM [Aurorita_Access].[dbo].[DetallesPedidos] dp
   left join Productos pro on pro.Id = dp.Producto
@@ -3343,12 +3345,14 @@ where dc.Id is not null</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\DetalleVentas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descuento]"
-                      dataType="i4"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\DetalleVentas\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Descuento]"
                       lineageId="Package\DetalleVentas\OLE DB Source.Outputs[OLE DB Source Output].Columns[Descuento]"
                       name="Descuento"
+                      precision="18"
+                      scale="2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\DetalleVentas\OLE DB Source.Outputs[OLE DB Source Output].Columns[IdDetalle]"
@@ -8066,7 +8070,12 @@ where resultado.Id is not null</property>
   where dimf.Dia = DAY(FechaEnvio) AND dimm.Mes = Month(FechaEnvio) AND dima.Anio = YEAR(FechaEnvio)
   ) as IdFechaEnvio
   ,
-  CAST(ISNULL(replace(p.Cargo, ',', '.'), 0) as decimal(18,2)) as ValorTotal
+  /*(CAST(ISNULL(replace(p.Cargo, ',', '.'), 0) as decimal(18,2))) as ValorTotal*/
+  cast(ISNULL(((
+	  select SUM(IIF(dp.Descuento&gt;0, ((CAST(ISNULL(replace(dp.Precio, ',', '.'), 0) as decimal(18,2)))-((CAST(ISNULL(replace(dp.Precio, ',', '.'), 0) as decimal(18,2)))*(IIF(dp.Descuento=0, 1, dp.Descuento)))), (CAST(ISNULL(replace(dp.Precio, ',', '.'), 0) as decimal(18,2))))) from [Aurorita_Access].[dbo].DetallesPedidos dp
+	  where dp.Id=p.Id
+	  group by dp.Id
+  )), CAST(ISNULL(replace(p.Cargo, ',', '.'), 0) as decimal(18,2))) as decimal(18,2)) as ValorTotal
   FROM [Aurorita_Access].[dbo].[Pedidos] p
   left join Aurorita.dbo.Dim_Persona dimp on dimp.Id = p.Cliente and dimp.Tipo = 2
   left join Empleados emp on emp.Id = p.Empleado
@@ -8628,6 +8637,10 @@ where resultado.Id is not null</property>
           Size="112,43"
           Id="Package\Paises"
           TopLeft="1036.56547884475,147.546991528189" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Presupuesto"
+          TopLeft="181.25,782.5" />
         <NodeLayout
           Size="129,42"
           Id="Package\Productos"
@@ -9237,6 +9250,72 @@ where resultado.Id is not null</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 25]"
+          TopLeft="780,809.125000000003">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-228.25,0"
+              Start="0,0"
+              End="-220.75,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-220.75,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 26]"
+          TopLeft="497.958333333333,829.361111111114">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.8333333333339"
+              Start="0,0"
+              End="0,41.3333333333339">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.3333333333339" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 27]"
+          TopLeft="438.75,805.930555555557">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-116.5,0"
+              Start="0,0"
+              End="-109,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-109,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 28]"
           TopLeft="493.597222222222,426.444444444446">
           <EdgeLayout.Curve>
@@ -9498,76 +9577,6 @@ where resultado.Id is not null</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,22" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 25]"
-          TopLeft="780,809.125000000003">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-228.25,0"
-              Start="0,0"
-              End="-220.75,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-220.75,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 26]"
-          TopLeft="497.958333333333,829.361111111114">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48.8333333333339"
-              Start="0,0"
-              End="0,41.3333333333339">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.3333333333339" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="141,42"
-          Id="Package\Presupuesto"
-          TopLeft="181.25,782.5" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 27]"
-          TopLeft="438.75,805.930555555557">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-116.5,0"
-              Start="0,0"
-              End="-109,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-109,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10629,7 +10638,7 @@ where resultado.Id is not null</property>
     design-time-name="Package\Fechas">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="157,42"
           Id="Package\Fechas\OLE DB Source"
@@ -10669,7 +10678,9 @@ where resultado.Id is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10836,6 +10847,79 @@ where resultado.Id is not null</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Paises\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Presupuesto">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Presupuesto\OLE DB Destination"
+          TopLeft="476,299" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Presupuesto\OLE DB Source"
+          TopLeft="241,157" />
+        <EdgeLayout
+          Id="Package\Presupuesto.Paths[OLE DB Source Output]"
+          TopLeft="319.5,199">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="245,100"
+              Start="0,0"
+              End="245,92.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46"
+                    Point2="0,50"
+                    Point3="4,50" />
+                  <mssgle:LineSegment
+                    End="241,50" />
+                  <mssgle:CubicBezierSegment
+                    Point1="241,50"
+                    Point2="245,50"
+                    Point3="245,54" />
+                  <mssgle:LineSegment
+                    End="245,92.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Presupuesto\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Presupuesto\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11270,77 +11354,6 @@ where resultado.Id is not null</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Presupuesto">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Presupuesto\OLE DB Source"
-          TopLeft="241,157" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Presupuesto\OLE DB Destination"
-          TopLeft="476,299" />
-        <EdgeLayout
-          Id="Package\Presupuesto.Paths[OLE DB Source Output]"
-          TopLeft="319.5,199">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="245,100"
-              Start="0,0"
-              End="245,92.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,46"
-                    Point2="0,50"
-                    Point3="4,50" />
-                  <mssgle:LineSegment
-                    End="241,50" />
-                  <mssgle:CubicBezierSegment
-                    Point1="241,50"
-                    Point2="245,50"
-                    Point3="245,54" />
-                  <mssgle:LineSegment
-                    End="245,92.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Presupuesto\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Presupuesto\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
