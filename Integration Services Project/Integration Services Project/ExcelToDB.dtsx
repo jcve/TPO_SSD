@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="ExcelToDB"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{D8275B51-DA23-42D0-9126-A9A05BA0D117}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{1F80A468-56D0-49CE-ADBA-8DD6BDE1BFC8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -161,11 +161,9 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Presupuesto 2016\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="7"
                       lineageId="Package\Presupuesto 2016\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]"
                       name="Copy of Periodo"
                       truncationRowDisposition="FailComponent">
@@ -643,9 +641,7 @@
                       lineageId="Package\Presupuesto 2016\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Valor]" />
                     <inputColumn
                       refId="Package\Presupuesto 2016\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Periodo]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="7"
+                      cachedDataType="dbDate"
                       cachedName="Copy of Periodo"
                       externalMetadataColumnId="Package\Presupuesto 2016\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Periodo]"
                       lineageId="Package\Presupuesto 2016\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]" />
@@ -670,9 +666,7 @@
                       name="Valor" />
                     <externalMetadataColumn
                       refId="Package\Presupuesto 2016\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Periodo]"
-                      codePage="1252"
-                      dataType="str"
-                      length="7"
+                      dataType="dbDate"
                       name="Periodo" />
                   </externalMetadataColumns>
                 </input>
@@ -840,7 +834,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2016/01</property>
+                          name="PivotKeyValue">2016-01-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -858,7 +852,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2016/02</property>
+                          name="PivotKeyValue">2016-02-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -876,7 +870,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2016/03</property>
+                          name="PivotKeyValue">2016-03-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -894,7 +888,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2016/04</property>
+                          name="PivotKeyValue">2016-04-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -912,7 +906,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2016/05</property>
+                          name="PivotKeyValue">2016-05-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -930,7 +924,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2016/06</property>
+                          name="PivotKeyValue">2016-06-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -948,7 +942,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2016/07</property>
+                          name="PivotKeyValue">2016-07-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -966,7 +960,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2016/08</property>
+                          name="PivotKeyValue">2016-08-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -984,7 +978,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2016/09</property>
+                          name="PivotKeyValue">2016-09-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -1002,7 +996,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2016/10</property>
+                          name="PivotKeyValue">2016-10-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -1020,7 +1014,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2016/11</property>
+                          name="PivotKeyValue">2016-11-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -1038,7 +1032,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2016/12</property>
+                          name="PivotKeyValue">2016-12-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -1297,11 +1291,9 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Presupuesto 2017\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="7"
                       lineageId="Package\Presupuesto 2017\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]"
                       name="Copy of Periodo"
                       truncationRowDisposition="FailComponent">
@@ -1779,9 +1771,7 @@
                       lineageId="Package\Presupuesto 2017\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Valor]" />
                     <inputColumn
                       refId="Package\Presupuesto 2017\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Periodo]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="7"
+                      cachedDataType="dbDate"
                       cachedName="Copy of Periodo"
                       externalMetadataColumnId="Package\Presupuesto 2017\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Periodo]"
                       lineageId="Package\Presupuesto 2017\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]" />
@@ -1806,9 +1796,7 @@
                       name="Valor" />
                     <externalMetadataColumn
                       refId="Package\Presupuesto 2017\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Periodo]"
-                      codePage="1252"
-                      dataType="str"
-                      length="7"
+                      dataType="dbDate"
                       name="Periodo" />
                   </externalMetadataColumns>
                 </input>
@@ -1976,7 +1964,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2017/01</property>
+                          name="PivotKeyValue">2017-01-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -1994,7 +1982,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2017/02</property>
+                          name="PivotKeyValue">2017-02-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2012,7 +2000,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2017/03</property>
+                          name="PivotKeyValue">2017-03-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2030,7 +2018,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2017/04</property>
+                          name="PivotKeyValue">2017-04-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2048,7 +2036,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2017/05</property>
+                          name="PivotKeyValue">2017-05-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2066,7 +2054,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2017/06</property>
+                          name="PivotKeyValue">2017-06-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2084,7 +2072,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2017/07</property>
+                          name="PivotKeyValue">2017-07-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2102,7 +2090,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2017/08</property>
+                          name="PivotKeyValue">2017-08-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2120,7 +2108,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2017/09</property>
+                          name="PivotKeyValue">2017-09-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2138,7 +2126,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2017/10</property>
+                          name="PivotKeyValue">2017-10-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2156,7 +2144,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2017/11</property>
+                          name="PivotKeyValue">2017-11-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2174,7 +2162,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2017/12</property>
+                          name="PivotKeyValue">2017-12-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2433,11 +2421,9 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Presupuesto 2018\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="7"
                       lineageId="Package\Presupuesto 2018\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]"
                       name="Copy of Periodo"
                       truncationRowDisposition="FailComponent">
@@ -2915,9 +2901,7 @@
                       lineageId="Package\Presupuesto 2018\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Valor]" />
                     <inputColumn
                       refId="Package\Presupuesto 2018\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Periodo]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="7"
+                      cachedDataType="dbDate"
                       cachedName="Copy of Periodo"
                       externalMetadataColumnId="Package\Presupuesto 2018\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Periodo]"
                       lineageId="Package\Presupuesto 2018\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]" />
@@ -2942,9 +2926,7 @@
                       name="Valor" />
                     <externalMetadataColumn
                       refId="Package\Presupuesto 2018\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Periodo]"
-                      codePage="1252"
-                      dataType="str"
-                      length="7"
+                      dataType="dbDate"
                       name="Periodo" />
                   </externalMetadataColumns>
                 </input>
@@ -3112,7 +3094,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2018/01</property>
+                          name="PivotKeyValue">2018-01-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3130,7 +3112,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2018/02</property>
+                          name="PivotKeyValue">2018-02-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3148,7 +3130,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2018/03</property>
+                          name="PivotKeyValue">2018-03-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3166,7 +3148,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2018/04</property>
+                          name="PivotKeyValue">2018-04-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3184,7 +3166,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2018/05</property>
+                          name="PivotKeyValue">2018-05-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3202,7 +3184,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2018/06</property>
+                          name="PivotKeyValue">2018-06-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3220,7 +3202,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2018/07</property>
+                          name="PivotKeyValue">2018-07-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3238,7 +3220,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2018/08</property>
+                          name="PivotKeyValue">2018-08-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3256,7 +3238,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2018/09</property>
+                          name="PivotKeyValue">2018-09-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3274,7 +3256,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2018/10</property>
+                          name="PivotKeyValue">2018-10-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3292,7 +3274,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2018/11</property>
+                          name="PivotKeyValue">2018-11-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3310,7 +3292,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2018/12</property>
+                          name="PivotKeyValue">2018-12-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3569,11 +3551,9 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Presupuesto 2019\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="7"
                       lineageId="Package\Presupuesto 2019\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]"
                       name="Copy of Periodo"
                       truncationRowDisposition="FailComponent">
@@ -4099,9 +4079,7 @@
                       lineageId="Package\Presupuesto 2019\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Valor]" />
                     <inputColumn
                       refId="Package\Presupuesto 2019\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Periodo]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="7"
+                      cachedDataType="dbDate"
                       cachedName="Copy of Periodo"
                       externalMetadataColumnId="Package\Presupuesto 2019\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Periodo]"
                       lineageId="Package\Presupuesto 2019\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]" />
@@ -4126,9 +4104,7 @@
                       name="Valor" />
                     <externalMetadataColumn
                       refId="Package\Presupuesto 2019\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Periodo]"
-                      codePage="1252"
-                      dataType="str"
-                      length="7"
+                      dataType="dbDate"
                       name="Periodo" />
                   </externalMetadataColumns>
                 </input>
@@ -4296,7 +4272,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2019/01</property>
+                          name="PivotKeyValue">2019-01-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -4314,7 +4290,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2019/02</property>
+                          name="PivotKeyValue">2019-02-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -4332,7 +4308,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2019/03</property>
+                          name="PivotKeyValue">2019-03-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -4350,7 +4326,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2019/04</property>
+                          name="PivotKeyValue">2019-04-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -4368,7 +4344,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2019/05</property>
+                          name="PivotKeyValue">2019-05-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -4386,7 +4362,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2019/06</property>
+                          name="PivotKeyValue">2019-06-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -4404,7 +4380,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2019/07</property>
+                          name="PivotKeyValue">2019-07-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -4422,7 +4398,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2019/08</property>
+                          name="PivotKeyValue">2019-08-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -4440,7 +4416,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2019/09</property>
+                          name="PivotKeyValue">2019-09-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -4458,7 +4434,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2019/10</property>
+                          name="PivotKeyValue">2019-10-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -4476,7 +4452,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2019/11</property>
+                          name="PivotKeyValue">2019-11-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -4494,7 +4470,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2019/12</property>
+                          name="PivotKeyValue">2019-12-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -4753,11 +4729,9 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="7"
                       lineageId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]"
                       name="Copy of Periodo"
                       truncationRowDisposition="FailComponent">
@@ -5451,9 +5425,7 @@
                       lineageId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Valor]" />
                     <inputColumn
                       refId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Periodo]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="7"
+                      cachedDataType="dbDate"
                       cachedName="Copy of Periodo"
                       externalMetadataColumnId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Periodo]"
                       lineageId="Package\Presupuesto 2020\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Periodo]" />
@@ -5478,9 +5450,7 @@
                       name="Valor" />
                     <externalMetadataColumn
                       refId="Package\Presupuesto 2020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Periodo]"
-                      codePage="1252"
-                      dataType="str"
-                      length="7"
+                      dataType="dbDate"
                       name="Periodo" />
                   </externalMetadataColumns>
                 </input>
@@ -5864,7 +5834,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2020/01</property>
+                          name="PivotKeyValue">2020-01-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -5882,7 +5852,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2020/02</property>
+                          name="PivotKeyValue">2020-02-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -5900,7 +5870,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2020/03</property>
+                          name="PivotKeyValue">2020-03-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -5918,7 +5888,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2020/04</property>
+                          name="PivotKeyValue">2020-04-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -5936,7 +5906,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2020/05</property>
+                          name="PivotKeyValue">2020-05-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -5954,7 +5924,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2020/06</property>
+                          name="PivotKeyValue">2020-06-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -5972,7 +5942,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2020/07</property>
+                          name="PivotKeyValue">2020-07-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -5990,7 +5960,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2020/08</property>
+                          name="PivotKeyValue">2020-08-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -6008,7 +5978,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2020/09</property>
+                          name="PivotKeyValue">2020-09-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -6026,7 +5996,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2020/10</property>
+                          name="PivotKeyValue">2020-10-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -6044,7 +6014,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2020/11</property>
+                          name="PivotKeyValue">2020-11-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -6062,7 +6032,7 @@
                           dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue">2020/12</property>
+                          name="PivotKeyValue">2020-12-01</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -6629,6 +6599,10 @@
           Size="168,42"
           Id="Package\Presupuesto 2019"
           TopLeft="595.5,182.5" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Presupuesto 2020"
+          TopLeft="779,184" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="529.666666666667,95.5">
@@ -6765,10 +6739,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Presupuesto 2020"
-          TopLeft="779,184" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="606.333333333333,95.5">
@@ -6810,7 +6780,7 @@
     design-time-name="Package\Presupuesto 2016">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="177,42"
           Id="Package\Presupuesto 2016\OLE DB Destination"
@@ -6850,9 +6820,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6874,9 +6842,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6898,9 +6864,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6922,9 +6886,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6960,7 +6922,7 @@
     design-time-name="Package\Presupuesto 2017">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="177,42"
           Id="Package\Presupuesto 2017\OLE DB Destination"
@@ -7000,9 +6962,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7024,9 +6984,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7048,9 +7006,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7072,9 +7028,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7110,7 +7064,7 @@
     design-time-name="Package\Presupuesto 2018">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="177,42"
           Id="Package\Presupuesto 2018\OLE DB Destination"
@@ -7150,9 +7104,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7174,9 +7126,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7198,9 +7148,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7222,9 +7170,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7404,6 +7350,10 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="177,42"
+          Id="Package\Presupuesto 2020\OLE DB Destination"
+          TopLeft="121,448" />
+        <NodeLayout
           Size="144,42"
           Id="Package\Presupuesto 2020\Excel Source"
           TopLeft="139,62" />
@@ -7411,54 +7361,10 @@
           Size="116,42"
           Id="Package\Presupuesto 2020\Unpivot"
           TopLeft="156,159" />
-        <EdgeLayout
-          Id="Package\Presupuesto 2020.Paths[Excel Source Output]"
-          TopLeft="212.5,104">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55"
-              Start="0,0"
-              End="0,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="123,42"
           Id="Package\Presupuesto 2020\Union All"
           TopLeft="147,243" />
-        <EdgeLayout
-          Id="Package\Presupuesto 2020.Paths[Unpivot Output]"
-          TopLeft="211.25,201">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="161,42"
           Id="Package\Presupuesto 2020\Data Conversion"
@@ -7485,10 +7391,28 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Presupuesto 2020\OLE DB Destination"
-          TopLeft="121,448" />
+        <EdgeLayout
+          Id="Package\Presupuesto 2020.Paths[Excel Source Output]"
+          TopLeft="212.5,104">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Presupuesto 2020.Paths[Data Conversion Output]"
           TopLeft="210.5,379">
@@ -7503,6 +7427,28 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Presupuesto 2020.Paths[Unpivot Output]"
+          TopLeft="211.25,201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
